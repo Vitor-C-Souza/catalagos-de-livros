@@ -1,0 +1,33 @@
+# Definindo o tipo Autor
+type Autor {
+    id: String
+    nome: String
+    nacionalidade: String
+}
+
+# Definindo o tipo Livro
+type Livro {
+    id: String
+    titulo: String
+    genero: String
+    anoPublicacao: Int
+    autor: Autor
+}
+
+# Definindo as consultas (queries)
+type Query {
+    livros: [Livro]
+    livro(id: String): Livro
+    autores: [Autor]
+    autor(id: String): Autor
+}
+
+# Definindo as mutações (mutations)
+type Mutation {
+    addLivro(titulo: String!, genero: String!, anoPublicacao: String!, autorId: String!): Livro
+    addAutor(nome: String!, nacionalidade: String!): Autor
+    updateAutor(id: String!, nome: String, nacionalidade: String): Autor
+    updateLivro(id: String!, titulo: String, genero: String, anoPublicacao: Int, autorId: String): Livro
+    deletaAutor(id: String!): Boolean
+    deletaLivro(id: String!): Boolean
+}
