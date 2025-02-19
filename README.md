@@ -104,6 +104,10 @@ Agora, basta rodar:
 ```bash
 mvn spring-boot:run
 ```
+Agora para testar a aplicação acesse: 
+```bash
+http://localhost:8080/graphiql
+```
 
 
 ## Contribuição
